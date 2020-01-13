@@ -43,8 +43,8 @@ export default class Directory extends Component {
 
   buildMenuItems = () => {
     const { sections } = this.state;
-    return sections.map(( {title, imageUrl, id, size} ) => {
-      return <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />;
+    return sections.map(( { id, ...otherSectionProps } ) => {
+      return <MenuItem key={id} {...otherSectionProps} />;
     });
   };
 
